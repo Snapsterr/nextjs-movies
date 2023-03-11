@@ -2,12 +2,12 @@ import { useRef, useState } from "react"
 import { TextField, Typography } from "@mui/material"
 import SearchIcon from "@mui/icons-material/Search"
 import CloseIcon from "@mui/icons-material/Close"
-
-import styles from "./Searchbar.module.css"
 import IconButton from "@mui/material/IconButton"
 import { useAppDispatch } from "@/hooks/useAppDispatch"
 import { setQuery } from "@/store/slices/moviesSlice"
 import { getMoviesByQuery } from "@/store/thunks/fetchMovies"
+
+import styles from "./Searchbar.module.css"
 
 const Searchbar = () => {
   const dispatch = useAppDispatch()
@@ -18,7 +18,6 @@ const Searchbar = () => {
 
   const onSubmitHandler = (e: React.FormEvent): void | null => {
     e.preventDefault()
-    // console.log(searchValue)
     let trimmedValue = searchValue.trim()
 
     if (!searchValue) return null
@@ -52,6 +51,7 @@ const Searchbar = () => {
               type="submit"
               aria-label="search"
               sx={{
+                width: "100%",
                 "&:hover": {
                   backgroundColor: "rgb(167, 167, 167, 0.2)",
                 },

@@ -6,10 +6,10 @@ import Home from "../page"
 import { Box, Container } from "@mui/system"
 import { Typography, Skeleton } from "@mui/material"
 import Image from "next/legacy/image"
-
-import styles from "./page.module.css"
 import MovieDetails from "@/components/MovieDetails/MovieDetails"
 import Loader from "@/components/Loader/Loader"
+
+import styles from "./page.module.css"
 
 const MoviePage = () => {
   const { movieById, isLoading } = useAppSelector(

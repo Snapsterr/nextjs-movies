@@ -1,8 +1,8 @@
-import { MovieFull } from './../../types/typings.d';
-import { MovieResponse } from '@/types/typings';
-import { Movie, MovieState } from '@/types/typings';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { getMovieById, getMoviesByPage, getMoviesByQuery } from '../thunks/fetchMovies'
+import { MovieFull } from "./../../types/typings.d"
+import { MovieResponse } from "@/types/typings"
+import { Movie, MovieState } from "@/types/typings"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { getMovieById, getMoviesByPage, getMoviesByQuery } from "../thunks/fetchMovies"
 
 const initialState: MovieState = {
   movies: [],

@@ -10,9 +10,9 @@ import { useEffect } from "react"
 import { Box } from "@mui/system"
 import Searchbar from "@/components/Searchbar/Searchbar"
 import Popup from "@/components/Popup"
+import Loader from "@/components/Loader/Loader"
 
 import styles from "./page.module.css"
-import Loader from "@/components/Loader/Loader"
 
 const Home = () => {
   const dispatch = useAppDispatch()
@@ -34,8 +34,6 @@ const Home = () => {
   }, [isPageNumChanged])
 
   const { handleChange } = useAppNavigation()
-
-  // console.log("2", isPageNumChanged)
 
   return (
     <>

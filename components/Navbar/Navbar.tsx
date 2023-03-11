@@ -9,9 +9,10 @@ import NavMenu from "../NavMenu"
 import LiveTvIcon from "@mui/icons-material/LiveTv"
 import Link from "next/link"
 import SideBarMenu from "../SideBarMenu"
-import styles from "./Navbar.module.css"
 import { IconButton } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu"
+
+import styles from "./Navbar.module.css"
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false)

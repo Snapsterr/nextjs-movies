@@ -1,6 +1,6 @@
 "use client"
 
-import { Suspense, useState } from "react"
+import { useState } from "react"
 import {
   Card,
   CardContent,
@@ -18,13 +18,13 @@ import Image from "next/legacy/image"
 import MovieIcon from "@mui/icons-material/Movie"
 import { getMovieById } from "@/store/thunks/fetchMovies"
 import { useAppDispatch, useAppSelector } from "@/hooks/useAppDispatch"
-
-import styles from "./CardItem.module.css"
 import {
   addToFavourites,
   removeFromFavourites,
 } from "@/store/slices/moviesSlice"
 import { compareId } from "@/helpers/compareId"
+
+import styles from "./CardItem.module.css"
 
 interface Props {
   movie: Movie
