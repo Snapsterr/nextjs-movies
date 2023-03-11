@@ -1,6 +1,7 @@
 .imgWrapper {
   position: relative;
-  width: 40%;
+  min-width: 40%;
+  max-width: 40%;
   height: 1000px;
   max-height: 600px;
 }
@@ -30,7 +31,6 @@
     margin: 0 auto;
   }
   .noImgWrapper{
-    /* min-height: 250px; */
     max-height: auto;
   }  
   .noImg {

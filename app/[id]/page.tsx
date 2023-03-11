@@ -63,16 +63,12 @@ const MoviePage = () => {
               <Skeleton
                 width={"100%"}
                 sx={{
-                  minHeight: "300px",
-                  maxHeight: "300px",
+                  minHeight: "100%",
+                  maxHeight: "100%",
                   borderBottomLeftRadius: "0px",
                   borderBottomRightRadius: "0px",
                   transform: "scale(1)",
                   backgroundColor: "#6c6c6c",
-                  "@media screen and (max-width: 899px)": {
-                    minHeight: "250px",
-                    maxHeight: "250px",
-                  },
                 }}
               />
             )}
