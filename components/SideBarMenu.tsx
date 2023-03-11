@@ -29,6 +29,9 @@ const SideBarMenu = ({ open, handleClose }: Props) => {
             height: "auto",
             boxSizing: "border-box",
             zIndex: "5000",
+            "@media screen and (max-width: 599px)": {
+              top: "57px",
+            },
           },
         }}
         variant="persistent"

@@ -18,7 +18,7 @@ const Searchbar = () => {
 
   const onSubmitHandler = (e: React.FormEvent): void | null => {
     e.preventDefault()
-    console.log(searchValue)
+    // console.log(searchValue)
     let trimmedValue = searchValue.trim()
 
     if (!searchValue) return null
@@ -40,7 +40,7 @@ const Searchbar = () => {
 
   return (
     <form className={styles.form} onSubmit={onSubmitHandler}>
-      <Typography sx={{ marginBottom: "10px" }}>
+      <Typography variant="h1" sx={{ marginBottom: "10px", fontSize: "1rem" }}>
         Search movies and series:
       </Typography>
       <TextField

@@ -1,9 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import { useAppSelector } from "@/hooks/useAppDispatch"
 import Home from "../page"
 import { Box, Container } from "@mui/system"
-import { Typography } from "@mui/material"
+import { Typography, Skeleton } from "@mui/material"
 import Image from "next/legacy/image"
 
 import styles from "./page.module.css"
@@ -14,6 +15,8 @@ const MoviePage = () => {
   const { movieById, isLoading } = useAppSelector(
     (state) => state.persistedReducer
   )
+
+  const [isImgLoaded, setIsImgLoaded] = useState<boolean>(true)
 
   if (movieById === null) {
     return <Home />
@@ -56,6 +59,23 @@ const MoviePage = () => {
           }}
         >
           <div className={styles.imgWrapper}>
+            {Poster !== "N/A" && isImgLoaded && (
+              <Skeleton
+                width={"100%"}
+                sx={{
+                  minHeight: "300px",
+                  maxHeight: "300px",
+                  borderBottomLeftRadius: "0px",
+                  borderBottomRightRadius: "0px",
+                  transform: "scale(1)",
+                  backgroundColor: "#6c6c6c",
+                  "@media screen and (max-width: 899px)": {
+                    minHeight: "250px",
+                    maxHeight: "250px",
+                  },
+                }}
+              />
+            )}
             {Poster !== "N/A" ? (
               <Image
                 src={Poster !== "N/A" ? Poster : ""}
@@ -63,6 +83,7 @@ const MoviePage = () => {
                 quality={100}
                 width={600}
                 height={600}
+                onLoad={() => setIsImgLoaded(false)}
                 layout="responsive"
                 objectFit="contain"
               />

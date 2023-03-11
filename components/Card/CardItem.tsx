@@ -1,11 +1,13 @@
 "use client"
 
+import { Suspense, useState } from "react"
 import {
   Card,
   CardContent,
   Typography,
   CardActions,
   Stack,
+  Skeleton,
 } from "@mui/material"
 import IconButton from "@mui/material/IconButton"
 import AddIcon from "@mui/icons-material/Add"
@@ -32,8 +34,12 @@ const CardItem = ({ movie }: Props) => {
   const dispatch = useAppDispatch()
   const { favouritesId } = useAppSelector((state) => state.persistedReducer)
 
+  const [isImgLoaded, setIsImgLoaded] = useState<boolean>(true)
+
   const { Poster, Title, Type, Year, imdbID } = movie
   const isFavourite = compareId(imdbID, favouritesId)
+
+  console.log("load", isImgLoaded)
   return (
     <Link href={`/${imdbID}`} onClick={(e) => dispatch(getMovieById(imdbID))}>
       <Card
@@ -53,14 +59,35 @@ const CardItem = ({ movie }: Props) => {
           "@media screen and (max-width: 899px)": {
             height: "405px",
           },
+          "@media screen and (max-width: 599px)": {
+            height: "385px",
+          },
         }}
       >
         <div className={styles.cardImgWrapper}>
+          {Poster !== "N/A" && isImgLoaded && (
+            <Skeleton
+              width={"100%"}
+              sx={{
+                minHeight: "300px",
+                maxHeight: "300px",
+                borderBottomLeftRadius: "0px",
+                borderBottomRightRadius: "0px",
+                transform: "scale(1)",
+                backgroundColor: "#6c6c6c",
+                "@media screen and (max-width: 899px)": {
+                  minHeight: "250px",
+                  maxHeight: "250px",
+                },
+              }}
+            />
+          )}
           {Poster !== "N/A" ? (
             <Image
               src={Poster !== "N/A" ? Poster : ""}
               alt={Title}
               quality={80}
+              onLoad={() => setIsImgLoaded(false)}
               layout="fill"
               objectFit="cover"
             />
@@ -86,7 +113,7 @@ const CardItem = ({ movie }: Props) => {
         >
           <Typography
             gutterBottom
-            variant="h5"
+            variant="h2"
             component="div"
             sx={{
               flex: "1 1 0",
@@ -135,7 +162,7 @@ const CardItem = ({ movie }: Props) => {
               }}
             />
             <Typography
-              variant="body2"
+              variant="h3"
               component="div"
               sx={{
                 flex: "1 1 0",
