@@ -1,0 +1,21 @@
+.main {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.noFavouritesWrapper {
+  margin: auto;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.noFavouritesText {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}

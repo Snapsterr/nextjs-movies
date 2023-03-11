@@ -1,0 +1,35 @@
+ .cardImgWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.cardNoImgWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #484848;
+}
+
+.cardNoImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  color: #dadada;
+}
+
+@media screen and (max-width: 899px) {
+  .cardImgWrapper{
+    min-height: 250px;
+    max-height: 250px;
+  }  
+  .cardNoImg {
+    font-size: 2rem;
+  }
+}
