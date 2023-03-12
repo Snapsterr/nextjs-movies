@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { useAppSelector } from "@/hooks/useAppDispatch"
-import Home from "../page"
 import { Box, Container } from "@mui/system"
 import { Typography, Skeleton } from "@mui/material"
 import Image from "next/legacy/image"
@@ -19,7 +18,7 @@ const MoviePage = () => {
   const [isImgLoaded, setIsImgLoaded] = useState<boolean>(true)
 
   if (movieById === null) {
-    return <Home />
+    return null
   }
 
   const { Title, Plot, Poster } = movieById
