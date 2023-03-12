@@ -1,9 +1,9 @@
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { TextField, Typography } from "@mui/material"
 import SearchIcon from "@mui/icons-material/Search"
 import CloseIcon from "@mui/icons-material/Close"
 import IconButton from "@mui/material/IconButton"
-import { useAppDispatch } from "@/hooks/useAppDispatch"
+import { useAppDispatch, useAppSelector } from "@/hooks/useAppDispatch"
 import { setQuery } from "@/store/slices/moviesSlice"
 import { getMoviesByQuery } from "@/store/thunks/fetchMovies"
 
@@ -11,19 +11,23 @@ import styles from "./Searchbar.module.css"
 
 const Searchbar = () => {
   const dispatch = useAppDispatch()
+  const { query, error } = useAppSelector((state) => state.persistedReducer)
 
-  const [searchValue, setSearchValue] = useState<string>("")
+  const [searchValue, setSearchValue] = useState<string>(query)
+
+  useEffect(() => {
+    if (error.length) setSearchValue("")
+  }, [error])
 
   const searchRef = useRef<HTMLInputElement>(null)
 
   const onSubmitHandler = (e: React.FormEvent): void | null => {
     e.preventDefault()
-    let trimmedValue = searchValue.trim()
 
     if (!searchValue) return null
 
-    dispatch(getMoviesByQuery(trimmedValue))
-    dispatch(setQuery(trimmedValue))
+    dispatch(getMoviesByQuery(searchValue.trim()))
+    dispatch(setQuery(searchValue.trim()))
   }
 
   const onChangeHandler = (

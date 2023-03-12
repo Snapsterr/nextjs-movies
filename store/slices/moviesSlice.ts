@@ -65,6 +65,9 @@ const moviesSlice = createSlice({
       .addCase(getMoviesByQuery.rejected, (state, action: PayloadAction<any>) => {
         state.isLoading = false
         state.error = action.payload
+        state.movies = []
+        state.totalPages = 1
+        state.query = ''
       })
 
       //getMoviesByPage
