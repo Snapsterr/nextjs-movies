@@ -3,7 +3,7 @@
 import { useAppDispatch, useAppSelector } from "@/hooks/useAppDispatch"
 import { getMoviesByPage } from "@/store/thunks/fetchMovies"
 import CustomGrid from "@/components/Grid"
-import Container from "@mui/material/Container"
+import { Container, Typography } from "@mui/material"
 import PaginationRange from "@/components/Pagination/PaginationRange"
 import useAppNavigation from "@/hooks/useAppNavigation"
 import { useEffect } from "react"
@@ -59,7 +59,21 @@ const Home = () => {
                   handleChange={handleChange}
                 />
               </>
-            ) : null}
+            ) : (
+              <Typography
+                variant="h1"
+                sx={{
+                  margin: "auto",
+                  fontSize: "2.5rem",
+                  textAlign: "center",
+                  "@media screen and (max-width: 599px)": {
+                    fontSize: "1.7rem",
+                  },
+                }}
+              >
+                Enter the movie title in the search bar to get the result
+              </Typography>
+            )}
           </Box>
         </Container>
       </main>

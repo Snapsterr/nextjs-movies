@@ -43,7 +43,7 @@ const Searchbar = () => {
 
   return (
     <form className={styles.form} onSubmit={onSubmitHandler}>
-      <Typography variant="h1" sx={{ marginBottom: "10px", fontSize: "1rem" }}>
+      <Typography variant="h2" sx={{ marginBottom: "10px", fontSize: "1rem" }}>
         Search movies and series:
       </Typography>
       <TextField

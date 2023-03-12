@@ -112,7 +112,7 @@ const CardItem = ({ movie }: Props) => {
         >
           <Typography
             gutterBottom
-            variant="h2"
+            variant="h3"
             component="div"
             sx={{
               flex: "1 1 0",
@@ -161,7 +161,7 @@ const CardItem = ({ movie }: Props) => {
               }}
             />
             <Typography
-              variant="h3"
+              variant="body2"
               component="div"
               sx={{
                 flex: "1 1 0",
