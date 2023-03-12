@@ -55,7 +55,6 @@ const Searchbar = () => {
               type="submit"
               aria-label="search"
               sx={{
-                // width: "100%",
                 "&:hover": {
                   backgroundColor: "rgb(167, 167, 167, 0.2)",
                 },

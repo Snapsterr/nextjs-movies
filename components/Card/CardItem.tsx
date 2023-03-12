@@ -39,7 +39,6 @@ const CardItem = ({ movie }: Props) => {
   const { Poster, Title, Type, Year, imdbID } = movie
   const isFavourite = compareId(imdbID, favouritesId)
 
-  // console.log("load", isImgLoaded)
   return (
     <Link href={`/${imdbID}`} onClick={(e) => dispatch(getMovieById(imdbID))}>
       <Card

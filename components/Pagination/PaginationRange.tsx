@@ -20,8 +20,6 @@ const PaginationRange = ({ currentPage, totalPages, handleChange }: Props) => {
         color="primary"
         size="large"
         sx={{
-          fontFamily: "Montserrat",
-          fontWeight: 400,
           fontSize: "16px",
           backgroundColor: "transparent !important",
           color: "#fff !important",
