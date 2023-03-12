@@ -1,5 +1,3 @@
-import { CircularProgress } from "@mui/material"
-
 import styles from "./Loader.module.css"
 
 interface Props {
@@ -11,7 +9,10 @@ const Loader = ({ size, color }: Props) => {
   return (
     <div className={styles.loader}>
       <div className={styles.loaderWrapper}>
-        <CircularProgress size={size} sx={{ color: color }} />
+        <progress
+          className={styles.pureMaterialProgressCircular}
+          style={{ width: size, height: size, color: color }}
+        />
       </div>
     </div>
   )

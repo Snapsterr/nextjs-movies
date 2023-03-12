@@ -1,11 +1,13 @@
+import { Suspense } from "react"
+import Loader from "@/components/Loader/Loader"
 import Navbar from "@/components/Navbar/Navbar"
 import GlobalProvider from "@/store/GlobalProvider/GlobalProvider"
 
 import "./globals.css"
 
 export const metadata = {
-  title: "omdb test api",
-  description: "app for test omdb api",
+  title: "OMDb movie search",
+  description: "Search the movie from OMDb api",
 }
 
 export default function RootLayout({
@@ -17,8 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <GlobalProvider>
-          <Navbar />
-          {children}
+          <Suspense fallback={<Loader size="5rem" color="#fff" />}>
+            <Navbar />
+            {children}
+          </Suspense>
         </GlobalProvider>
       </body>
     </html>
