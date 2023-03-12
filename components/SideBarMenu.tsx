@@ -24,6 +24,7 @@ const SideBarMenu = ({ open, handleClose }: Props) => {
           width: "100%",
           flexShrink: 0,
           "& .MuiDrawer-paper": {
+            position: "absolute",
             top: "64px",
             width: "100%",
             height: "auto",

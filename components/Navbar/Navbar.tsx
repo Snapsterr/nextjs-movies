@@ -62,10 +62,10 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
 
-          <SideBarMenu open={open} handleClose={handleClose} />
           <NavMenu />
         </Toolbar>
       </Container>
+      <SideBarMenu open={open} handleClose={handleClose} />
     </AppBar>
   )
 }
