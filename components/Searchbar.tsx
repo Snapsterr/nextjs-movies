@@ -7,8 +7,6 @@ import { useAppDispatch, useAppSelector } from "@/hooks/useAppDispatch"
 import { setQuery } from "@/store/slices/moviesSlice"
 import { getMoviesByQuery } from "@/store/thunks/fetchMovies"
 
-import styles from "./Searchbar.module.css"
-
 const Searchbar = () => {
   const dispatch = useAppDispatch()
   const { query, error } = useAppSelector((state) => state.persistedReducer)
@@ -42,7 +40,10 @@ const Searchbar = () => {
   }
 
   return (
-    <form className={styles.form} onSubmit={onSubmitHandler}>
+    <form
+      onSubmit={onSubmitHandler}
+      style={{ width: "100%", maxWidth: "550px" }}
+    >
       <Typography variant="h2" sx={{ marginBottom: "10px", fontSize: "1rem" }}>
         Search movies and series:
       </Typography>

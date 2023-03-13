@@ -8,7 +8,7 @@ import PaginationRange from "@/components/Pagination/PaginationRange"
 import useAppNavigation from "@/hooks/useAppNavigation"
 import { useEffect } from "react"
 import { Box } from "@mui/system"
-import Searchbar from "@/components/Searchbar/Searchbar"
+import Searchbar from "@/components/Searchbar"
 import Popup from "@/components/Popup"
 import Loader from "@/components/Loader/Loader"
 

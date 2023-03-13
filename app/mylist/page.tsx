@@ -62,11 +62,26 @@ const MyList = () => {
               <CustomGrid movies={favouritesMovies} />
             </>
           ) : (
-            <div className={styles.noFavouritesWrapper}>
+            <div
+              style={{
+                margin: "auto",
+                width: "100%",
+                alignItems: "center",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+              }}
+            >
               <ErrorOutlineOutlinedIcon
                 sx={{ color: "#a3a3a3", fontSize: "7rem" }}
               />
-              <div className={styles.noFavouritesText}>
+              <div
+                style={{
+                  marginTop: "20px",
+                  fontSize: "1.5rem",
+                  textAlign: "center",
+                }}
+              >
                 {"You haven't added anything yet"}
               </div>
             </div>
